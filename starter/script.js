@@ -1,4 +1,5 @@
 'use strict';
+
 // selecting element 
 const player0El = document.querySelector('.player--0');
 const player1El = document.querySelector('.player--1');
@@ -42,11 +43,11 @@ const switchPlayer = function () {
   player1El.classList.toggle('player--active');
 }
 
-//rolling dice funcionality 
+//Rolling dice of funcionality 
 
  btnRoll.addEventListener('click', function () {
   if (playing) {
-  //  Generating random dice roll
+  // Generating random dice roll
   const dice = Math.trunc(Math.random() * 6) + 1;
 
   // display dice
@@ -54,9 +55,9 @@ const switchPlayer = function () {
   diceEl.src = `dice-${dice}.png`;
 
   // check for dice roll
-
   if (dice !== 1) {
   // Add dice to current score
+
   currentScore += dice;
   document.getElementById(`current--${activePlayer}`).textContent = currentScore;
   // current0El.textContent = currentScore; //change later
@@ -85,4 +86,5 @@ btnHold.addEventListener('click', function () {
   }
 }
 });
+
 btnNew.addEventListener('click', init);
